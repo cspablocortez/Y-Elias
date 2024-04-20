@@ -9,10 +9,10 @@
 
 <div id="tweets">
   <% @tweets.each do |tweet| %>
-    <a href=""></a><%= render tweet %>
-    <p>
+    <%= render tweet %>
+    <span>
       <%= link_to "Source", tweet %>
-    </p>
+    </span>
     <hr>
   <% end %>
 </div>
