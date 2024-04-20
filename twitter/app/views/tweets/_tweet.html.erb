@@ -1,7 +1,3 @@
 <div id="<%= dom_id tweet %>">
-  <p>
-    <strong>Body:</strong>
-    <%= tweet.body %>
-  </p>
-
+  <p><%= tweet.body %> <span class="text-secondary">(<%= time_ago_in_words(tweet.created_at) %> ago)</span> </p>
 </div>

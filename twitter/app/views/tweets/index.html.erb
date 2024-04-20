@@ -2,13 +2,17 @@
 
 <h1>Tweets</h1>
 
+<%= link_to "New tweet", new_tweet_path, class: "float-end" %>
+
+<br>
+
+
 <div id="tweets">
   <% @tweets.each do |tweet| %>
-    <%= render tweet %>
+    <a href=""></a><%= render tweet %>
     <p>
-      <%= link_to "Show this tweet", tweet %>
+      <%= link_to "Source", tweet %>
     </p>
+    <hr>
   <% end %>
 </div>
-
-<%= link_to "New tweet", new_tweet_path %>
