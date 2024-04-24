@@ -90,3 +90,5 @@ Add the [devise](https://github.com/heartcombo/devise) gem to your `Gemfile`.
 ```bash
 gem 'devise'
 ```
+
+Then run `bundle install` in the terminal.
