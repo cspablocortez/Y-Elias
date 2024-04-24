@@ -108,3 +108,5 @@ rails generate devise User
 ```
 
 This creates a migration, a model, and the Devise routes.
+
+4. Add additional fields to the app by going to the newest file created inside the `migrate`/`mature` directory of `db``
