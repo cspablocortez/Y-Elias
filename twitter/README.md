@@ -85,10 +85,17 @@ Done!
 
 ### Adding Users with the `devise` gem
 
-Add the [devise](https://github.com/heartcombo/devise) gem to your `Gemfile`.
+1. Add the [devise](https://github.com/heartcombo/devise) gem to your `Gemfile`.
 
 ```bash
 gem 'devise'
 ```
 
 Then run `bundle install` in the terminal.
+
+2. Set up `devise`:
+
+```bash
+rails generate devise:install
+```
+
