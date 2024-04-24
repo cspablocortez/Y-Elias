@@ -99,3 +99,12 @@ Then run `bundle install` in the terminal.
 rails generate devise:install
 ```
 
+Carefully read the instructions provided to configure your environment. 
+
+3. Generate the User Model
+
+```bash
+rails generate devise User
+```
+
+This creates a migration, a model, and the Devise routes.
