@@ -54,6 +54,10 @@ echo "web: bundle exec puma -C config/puma.rb" > Procfile
 
 Add the [devise](https://github.com/heartcombo/devise) gem to your `Gemfile`.
 
+```bash
+gem 'devise'
+```
+
 
 ### Deployment (IGNORE)
 
