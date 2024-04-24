@@ -50,15 +50,6 @@ Deploying a Rails 7 app without a Procfile executes the following command, but H
 echo "web: bundle exec puma -C config/puma.rb" > Procfile
 ```
 
-### Adding Users with the `devise` gem
-
-Add the [devise](https://github.com/heartcombo/devise) gem to your `Gemfile`.
-
-```bash
-gem 'devise'
-```
-
-
 ### Deployment (IGNORE)
 
 Create a Heroku app:
@@ -91,3 +82,11 @@ heroku run rake db:migrate
 ```
 
 Done!
+
+### Adding Users with the `devise` gem
+
+Add the [devise](https://github.com/heartcombo/devise) gem to your `Gemfile`.
+
+```bash
+gem 'devise'
+```
