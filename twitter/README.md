@@ -109,4 +109,35 @@ rails generate devise User
 
 This creates a migration, a model, and the Devise routes.
 
-4. Add additional fields to the app by going to the newest file created inside the `migrate`/`mature` directory of `db``
+4. Add additional fields to the app by going to the newest file created inside the `migrate`/`mature` directory of `db`.
+
+5. Run the Rails database migrations to create the users with the new fields:
+
+```bash
+rails db:migrate
+```
+
+6. Configure Devise Parameters
+
+Since we added new paramaters (`username` and `name`), we have to update the `application_controller.rb` file:
+
+```ruby
+class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name])
+  end
+end
+```
+
+7. Finally: Update Views
+
+```bash
+rails g devise:views
+```
+
+Then, modify the `app/views/devise/registrations/new.html.erb` and `app/views/devise/registrations/edit.html.erb` to include input fields for the additional attributes.
