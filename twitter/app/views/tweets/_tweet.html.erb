@@ -1,3 +1,4 @@
-<div id="<%= dom_id tweet %>">
+<div id="<%= dom_id tweet %>" class="">
+  <small>@<%= tweet.user.username %></small>
   <p><%= tweet.body %> <span class="text-secondary">(<%= time_ago_in_words(tweet.created_at) %> ago)</span> </p>
 </div>

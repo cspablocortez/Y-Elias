@@ -11,10 +11,9 @@
 
 <div id="tweets">
   <% @tweets.each do |tweet| %>
-    <%= render tweet %>
-    <span>
-      <%= link_to "Source", tweet %>
-    </span>
-    <hr>
+    <%= link_to tweet, class: 'tweet' do %>
+      <%= render tweet %>
+    <% end %>
   <% end %>
+    <hr>
 </div>
