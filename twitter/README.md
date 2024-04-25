@@ -141,3 +141,53 @@ rails g devise:views
 ```
 
 Then, modify the `app/views/devise/registrations/new.html.erb` and `app/views/devise/registrations/edit.html.erb` to include input fields for the additional attributes.
+
+### Class Friday 26 April -- Making Tweets belong to Users
+
+1. Delete all current tweets.
+
+2. Create a migration to add a user_id column to the Tweets database:
+
+```bash
+rails generate migration AddUserToTweets user:references
+```
+
+3. Update Models
+
+In your `Tweet` model (`app/models/tweet.rb`):
+
+```ruby
+class Tweet < ApplicationRecord
+  belongs_to :user
+end
+```
+
+In your `User` model (`app/models/user.rb`):
+
+```ruby
+class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  has_many :tweets
+end
+```
+
+4. Adjust `TweetsController` to ensure tweets are created with an associated user:
+
+```ruby
+class TweetsController < ApplicationController
+  
+  # previous code ... 
+
+  def create
+    @tweet = current_user.tweets.new(tweet_params)
+    if @tweet.save
+      redirect_to tweets_path, notice: 'Tweet was successfully created.'
+    else
+      render :new
+    end
+  end  
+
+  # more code ...
+end
+```
