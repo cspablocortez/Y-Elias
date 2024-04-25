@@ -21,15 +21,17 @@
                         User
                     <% end %>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-lg-end">
-                    
-                    <li><%= link_to 'Sign up', new_user_registration_path, class: 'dropdown-item' %></li>
-                    <li><%= link_to 'Log in', new_user_session_path, class: 'dropdown-item' %></li>
-
-                </li>            
-
-                
-            </ul>
+                 <ul class="dropdown-menu dropdown-menu-lg-end">
+                    <% if user_signed_in? %>
+                        <li><%= link_to "Account", edit_user_registration_path, class: "btn btn-default btn-sm dropdown-item" %></li>
+                        <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-sm dropdown-item" %></li> 
+                                
+                    <% else %>
+                        <li><%= link_to 'Sign up', new_user_registration_path, class: "dropdown-item"  %></li>
+                        <li><%= link_to 'Log in', new_user_session_path, class: "dropdown-item" %></li>
+                    <% end %>
+                </ul>                   
+            
         </div>
     </div>
 </nav>
