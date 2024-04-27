@@ -15,6 +15,6 @@ git fetch upstream
 ```
 
 ```bash
-git merge upstream/main  
+git merge upstream/main --allow-unrelated-histories
 ```
 
