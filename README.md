@@ -17,4 +17,4 @@ git fetch upstream
 ```bash
 git merge upstream/main --allow-unrelated-histories
 ```
-
+*Note*: Delete old database for next class and update with new data.
