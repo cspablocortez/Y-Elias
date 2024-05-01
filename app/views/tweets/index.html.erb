@@ -13,7 +13,7 @@
 <div class="container my-4">
   <div id="tweets">
     <% @tweets.each do |tweet| %>
-      <%= link_to tweet, class: 'tweet' do %>
+      <%= link_to tweet, class: 'tweet-anchor-container' do %>
         <%= render tweet %>
       <% end %>
     <% end %>

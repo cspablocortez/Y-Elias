@@ -14,7 +14,28 @@
  *= require_self
  */
 
-.tweet {
+.tweet-anchor-container {
   color: black;
   text-decoration: none;
+}
+
+.tweet {
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.tweet-body {
+  margin-left: 80px;
+}
+
+.profile-picture {
+  border-radius: 100%;
+  max-width: 80px;
+  display: inline;
+}
+
+.profile-name, .tweet-timestamp {
+  color: #a5a5a5 !important;
+  display: inline;
 }
