@@ -20,9 +20,8 @@
 }
 
 .tweet {
-  /* border: 1px solid rgb(207, 207, 207); */
+  border: 1px solid rgb(207, 207, 207);
   border-radius: 1rem;
-  padding: 1.2rem;
 }
 
 .tweet:hover {
@@ -30,18 +29,39 @@
 }
 
 .tweet-body {
-  margin-left: 80px;
+  margin-left: 64px;
   position: relative;
-  margin-top: -20px;
+  margin-top: -10px;
+  width: 80%;
 }
 
 .profile-picture {
   border-radius: 100%;
-  max-width: 80px;
+  max-width: 64px;
   display: inline;
 }
 
 .profile-name, .tweet-timestamp {
   color: #7a7a7a !important;
   display: inline;
+}
+
+@media (min-width: 400px) {
+  .tweet-body {
+    margin-left: 80px;
+    position: relative;
+    margin-top: -20px;
+  }
+
+  .tweet {
+    /* border: 1px solid rgb(207, 207, 207); */
+    border-radius: 1rem;
+    padding: 1.2rem;
+  }
+
+  .profile-picture {
+    border-radius: 100%;
+    max-width: 80px;
+    display: inline;
+  }
 }
