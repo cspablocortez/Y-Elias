@@ -1,6 +1,10 @@
 <div id="<%= dom_id tweet %>" class="row tweet mb-1">
   <div class="row">
-    <img class="profile-picture col" src="https://picsum.photos/120" alt="User Profile Picture">
+    <% if tweet.user.image_url %>
+      <img class="profile-picture col" src="<%= tweet.user.image_url %>" alt="User Profile Picture">
+    <% else %>
+      <img class="profile-picture col" src="https://picsum.photos/200" alt="User Profile Picture">
+    <% end %>
     <p class="profile-name col">@<%= tweet.user.username %> · <small class="tweet-timestamp"><%= time_ago_in_words tweet.created_at %> ago</small></p>
      <p class="tweet-body"><%= tweet.body %> </p>
   </div>
