@@ -69,8 +69,7 @@ input[type=email], input[type=password], input[type=text]  {
   }
 
   .profile-picture {
-    border-radius: 100%;
     max-width: 80px;
-    display: inline;
+    object-fit: cover;
   }
 }

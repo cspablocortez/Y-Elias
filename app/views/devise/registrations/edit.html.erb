@@ -1,6 +1,6 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= image_tag @user.image_url, style: "display: block; width: 180px; height: 180px; border-radius: 100%; margin: 0 auto;" if @user.image_url.present? %>
+<%= image_tag @user.image_url, style: "display: block; width: 180px; height: 180px; border-radius: 100%; margin: 0 auto; object-fit: cover" if @user.image_url.present? %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "col-md-6 px-4 mx-auto", method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
