@@ -14,6 +14,28 @@
  *= require_self
  */
 
+:root {
+  --bg-color: #fff;
+  --text-color: #222;
+  --hover-color: #f3f0f087;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #222;
+    --text-color: #fff;
+    --hover-color: #303030;
+  }
+}
+
+.navbar a {
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 
 .flex-1, .flex-2 {
   display: flex;
@@ -40,10 +62,11 @@
   justify-content: start; /* Changed from space-between to start for a more cohesive layout */
   max-width: 30rem;
   padding: 1rem;
+  color: var(--text-color);
 }
 
 .tweet:hover {
-  background-color: #f3f0f087 !important;
+  background-color: var(--hover-color); !important;
 }
 
 .tweet-profile-pic {

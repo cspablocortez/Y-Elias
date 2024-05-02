@@ -1,16 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>All Tweets</h1>
 
-<% if user_signed_in? %>
-  <%= link_to new_tweet_path, class: "btn btn-primary btn-rounded float-end" do %>
-    <i class="bi bi-pencil-square"></i>
-  <% end %>
-<% end %>
+<h1>Tweets by @<%= @user.username %></h1>
 
 <br>
 
-<div class="container my-4">
+<div class="container mx-auto">
   <div id="tweets">
     <% @tweets.reverse.each do |tweet| %>
       <%= link_to tweet, class: 'tweet-anchor-container' do %>

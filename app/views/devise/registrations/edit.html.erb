@@ -5,20 +5,26 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "col-md-6 px-4 mx-auto", method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+
+  <div class="field">
+    <%= f.label :display_name %><br />
+    <%= f.text_field :display_name %>
+  </div>
+
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
+    <%= f.text_field :username %>
   </div>
 
   <div class="field">
     <%= f.label :image_url %><br />
-    <%= f.text_field :image_url, autofocus: true %>
+    <%= f.text_field :image_url %>
   </div>
 
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

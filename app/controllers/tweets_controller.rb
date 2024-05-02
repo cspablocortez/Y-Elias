@@ -2,6 +2,11 @@ class TweetsController < ApplicationController
   before_action :authenticate_user! #, only: %i[ edit update destroy ]
   before_action :set_tweet, only: %i[ show edit update destroy ]
 
+  def user_index
+    @user = User.find(params[:user_id])
+    @tweets = @user.tweets
+  end
+
   # GET /tweets or /tweets.json
   def index
     @tweets = Tweet.all
