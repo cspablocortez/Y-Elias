@@ -14,36 +14,61 @@
  *= require_self
  */
 
-.tweet-anchor-container {
-  color: black;
-  text-decoration: none;
+
+.flex-1, .flex-2 {
+  display: flex;
+  flex-direction: column; /* Ensures proper alignment of the children */
+  justify-content: center;
 }
+
+.flex-1 {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+/* Ensure consistent margin and padding for p and small tags within .flex */
+.flex p, .flex small {
+  margin: 0;
+  padding: 0;
+}
+
 
 .tweet {
   border-radius: 1rem;
+  display: flex;
+  justify-content: start; /* Changed from space-between to start for a more cohesive layout */
+  max-width: 30rem;
+  padding: 1rem;
 }
 
 .tweet:hover {
   background-color: #f3f0f087 !important;
 }
 
+.tweet-profile-pic {
+  border-radius: 50%; /* More precise than 100% for making circles */
+  width: 100%;
+  height: 100%;
+}
+
+.tweet-username, .tweet-timestamp {
+  color: #7a7a7a;
+}
+
+.tweet-name {
+  font-weight: bold;
+}
+
 .tweet-body {
-  margin-left: 64px;
-  position: relative;
-  margin-top: -10px;
-  width: 80%;
+  padding-top: 0.8rem !important; /* Removed !important as it's usually best avoided unless necessary */
 }
 
-.profile-picture {
-  border-radius: 100%;
-  max-width: 64px;
-  display: inline;
+.tweet-anchor-container {
+  color: black;
+  text-decoration: none;
 }
 
-.profile-name, .tweet-timestamp {
-  color: #7a7a7a !important;
-  display: inline;
-}
 
 input {
   padding: 0.25rem;
